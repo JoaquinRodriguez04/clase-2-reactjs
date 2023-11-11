@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculate</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<main>
+    <h1>calculadora</h1>
+    <form class="formCalculate" id="formCalculate">
+        <input 
+        type="number"
+        id="numberOperator"
+        placeholder="operador 1">
+        <div class="btnOperatorsActions">
+            <button id="addition">+</button>
+            <button id="substraction">-</button>
+            <button id="division">%</button>
+            <button id="multiplication">*</button>
+        </div>
+        <input 
+        type="number"
+        id="numberOperator2"
+        placeholder="operador 2">
+        <div class="resultsWrapper">
+            <span>=</span>
+            <span id="results"></span>
+        </div>
+    </form>
+    <button id="clearResults">clear results</button>
+</main>
 
 <script src="app.js"></script>
 </body>
