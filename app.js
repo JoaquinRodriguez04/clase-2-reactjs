@@ -48,3 +48,75 @@ todo:: Al realizar la cuenta se deberá actualizar el campo resultado.
 
 --------------------------------------------
 */
+
+const form = document.querySelector('#formCalculate');
+
+// operators
+const operator1 = document.querySelector('#numberOperator');
+const operator2 = document.querySelector('#numberOperator2');
+
+// butons 
+const addition = document.querySelector("#addition");
+const substraction = document.querySelector("#substraction");
+const division = document.querySelector("#division");
+const multiplication = document.querySelector("#multiplication");
+const clear = document.querySelector("#clearResults");
+
+// result Field
+const results = document.querySelector("#results");
+
+// events
+addition.addEventListener('click', function(e){
+    e.preventDefault();
+    calculate('add');
+});
+
+substraction.addEventListener('click', function(e){
+    e.preventDefault();
+    calculate('subtract');
+});
+
+division.addEventListener('click', function(e){
+    e.preventDefault();
+    calculate('divide');
+});
+
+multiplication.addEventListener('click', function(e){
+    e.preventDefault();
+    calculate('multiply');
+});
+
+clear.addEventListener('click', () => {
+    return (
+        operator1.value = '',
+        operator2.value = '',
+        results.textContent = ''
+    );
+})
+
+// result in memory
+let result;
+
+// function => calculate
+function calculate(operation){
+
+    // operators values
+    const op1 = parseFloat(operator1.value);
+    const op2 = parseFloat(operator2.value);
+
+    if (isNaN(op1)|| isNaN(op2)){
+        return results.textContent = 'por favor, números válidos.';
+    }
+
+    if (operation === 'add') {
+        result = op1 + op2;
+    } else if (operation === 'subtract') {
+        result = op1 - op2;
+    } else if (operation === 'divide') {
+        result = op1 / op2;
+    } else if (operation === 'multiply') {
+        result = op1 * op2;
+    }
+
+    return results.textContent = `resultado: ${result}`;
+};
