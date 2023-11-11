@@ -1,0 +1,51 @@
+/* normalizador */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    height: 100vh;
+}
+
+.formCalculate{
+    display: flex;
+    gap: .5em;
+    padding-inline: 2em;
+}
+
+:is(button, input){
+    border: 1px solid #111;
+    border-radius: .2em;
+    padding-inline: .5em;
+    background-color: #e7eef6;
+}
+
+.btnOperatorsActions{
+    display: flex;
+    gap: .3em;
+}
+
+.btnOperatorsActions > button{
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultsWrapper{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
